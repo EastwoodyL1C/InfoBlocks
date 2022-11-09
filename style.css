@@ -117,7 +117,7 @@ body {
 .button-slider {
     display: flex;
     justify-content: flex-end;
-    position: fixed;
+    position: absolute;
     right: 5px;
     top: 117px;
 }
