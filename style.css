@@ -7,29 +7,32 @@ body {
     height: 100%;
     margin: 0;                                      
 }
-
 .container {
     background-color: #f9f9fa;
 }
-.header {
+/*header block*/
+.headder {
     line-height: 84px;
     padding: 0 50px;
     background-color: #fff;
+    border: 2px solid #fff;
     display: flex;
     justify-content: space-between;
 }
-.header__logo img{
+.headder__logo img{
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
     max-width: 120px;
     width: 100%;
 }
-.header__support {
+.headder__support {
     color: #188fff;
     text-decoration: none;
     font-size: 18px;
 }
+
+/*main block*/
 .main {
     max-width: 350px;
     height: 100%;
@@ -89,6 +92,11 @@ body {
     width: 100%;
     margin-top: 25px;
 }
+.main__button button:hover {
+    background: #0374dd;
+    border: 1px solid #0374dd;
+    transition: .3s;
+}
 .main__button button {
     background: #188fff;
     border: 1px solid #188fff;
@@ -105,4 +113,59 @@ body {
 .main__signIn {
     margin-top: 28px;
     font-size: 14px;
+}
+.button-slider {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    right: 5px;
+    top: 117px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    transition: .3s;
+    border-radius: 34px;
+}
+.slider-circle {
+    border-radius: 34px;
+  }
+input:checked + .slider {
+    background-color: #747373;
+    border: 1px solid white;
+}
+.switch input {display:none;}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 1px;
+    background-color: rgb(255, 255, 255);
+    transition: .4s;
+    border-radius: 34px;
+}
+input:checked + .slider:before {
+    transform: translateX(16px);
+}
+body:has(#slider:checked) .container {
+    background-color: #2b2b2b;
+}
+body:has(#slider:checked) .headder {
+    background-color: #151515;
+    border: 2px solid rgba(87, 87, 87, 0.5);
 }
